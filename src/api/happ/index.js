@@ -8,5 +8,5 @@ let data={
 }
 
 export function GetAppFramework(params){
-    return Result(data[params.name])
+    return Result(data[params.name].app)
 }

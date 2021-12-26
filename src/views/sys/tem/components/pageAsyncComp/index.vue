@@ -16,7 +16,7 @@ export default {
     setup(props,ctx){
         let AsyncComp = {};//defineAsyncComponent(() =>import(`@/views/sys/tem/pages/${compName}/index.vue`))
         try{
-            console.log(props.contentComp)
+            // console.log(props.contentComp)
             require(`@/views/pages/${props.contentComp}/index.vue`)
             AsyncComp=resolveDynamicComponent(defineAsyncComponent(() =>import(`@/views/pages/${props.contentComp}/index.vue`)))
             

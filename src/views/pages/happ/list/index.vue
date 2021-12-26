@@ -133,11 +133,11 @@ export default {
       //加载数据
       loadData() {
         //获取查询字段
-        getAppSearchFields().then((r) => {
+        getAppSearchFields(props.params).then((r) => {
           search.fields = r.data;
         });
         //获取查询方案
-        getListFilterCases().then((r) => {
+        getListFilterCases(props.params).then((r) => {
           search.cases = r.data;
           search.cases.forEach((el) => {
             var color = "#87d068";
@@ -230,7 +230,7 @@ export default {
       } catch (error) {}
     };
 
-    getListOperators().then((r) => {
+    getListOperators(props.params).then((r) => {
       menuBar.menus = r.data;
     });
     return {

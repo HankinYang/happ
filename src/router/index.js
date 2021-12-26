@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import Home from '../views/Home.vue'
 import sysRoutes from './module/sys.js'
+import happRoutes from './module/happ.js'
 
 const routes = [
   ...sysRoutes,
+  ...happRoutes,
   {
     path: '/',
     name: 'Home',

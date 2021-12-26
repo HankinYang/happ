@@ -16,7 +16,7 @@
 import { computed, reactive } from "@vue/reactivity";
 import hFieldGroup from './components/hfieldGroup'
 import operatorBar from "@/views/pages/components/operatorBar";
-import { getAppOperators } from "@/api/sys";
+// import { getAppOperators } from "@/api/sys";
 import {GetAppFramework} from '@/api/happ'
 
 export default {
@@ -27,7 +27,12 @@ export default {
   props: {
     params: {
       type: Object,
-      default: () => {},
+      default: () => {
+        return {
+        name:'',//app的名称 用于加载app的框架信息
+        mode:'',//app的状态 如 新增|修改|预览
+      }
+      },
     },
   },
   setup(props) {
@@ -42,14 +47,15 @@ export default {
     })
 
     var init = () => {
-      getAppOperators().then((r) => {
-        operator.menus = r.data;
-      });
-      GetAppFramework({name:'language'}).then(r=>{
+      // getAppOperators().then((r) => {
+      //   operator.menus = r.data;
+      // });
+      GetAppFramework(props.params).then(r=>{
           r.data.fieldGroups.forEach(el=>{
               el.isFold=false;
           })
           fieldGroups.list=r.data.fieldGroups;
+          operator.menus=r.data.operators;
       })
     };
     init();
