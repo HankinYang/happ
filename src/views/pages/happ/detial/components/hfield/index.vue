@@ -4,8 +4,8 @@
         <template #label>
            {{da.label}}
         </template>
-        <a-input v-if="da.showInfo.category=='text'" v-model:value="da.val" :disabled="da.showInfo.disabled"/>
-        <a-input-number v-else-if="da.showInfo.category=='number'" v-model:value="da.val" :disabled="da.showInfo.disabled" />
+        <a-input v-if="da.showInfo.category=='text'" v-model:value="da.val" :disabled="da.showInfo.disabled" @change="fieldChange" @keyup="keyup"/>
+        <a-input-number v-else-if="da.showInfo.category=='number'" v-model:value="da.val" :disabled="da.showInfo.disabled" @change="fieldChange" @keyup="keyup"/>
       </a-form-item>
   </div>
 </template>
@@ -23,14 +23,21 @@ export default {
             }
         }
     },
-    setup(props){
+    setup(props,ctx){
         // console.log(props.da);
         props.da.val='';
         const state=reactive({
         });
-
+        const fieldChange=(e)=>{
+            ctx.emit('fieldChange',{field:props.da,data:e});
+        }
+        const keyup=(e)=>{
+            ctx.emit('fieldKeyup',{field:props.da,data:e});
+        }
         return {
-            state
+            state,
+            fieldChange,
+            keyup
         }
     }
 }

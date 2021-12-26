@@ -3,7 +3,7 @@ export default [
     {
         path: '/happ_app',
         name: 'happ_app',
-        component: () => import('@/views/pages/happ/app/index.vue'),
+        component: () => import('@/views/pages/happ/detial/index.vue'),
     },
     {
         path: '/happ_list',

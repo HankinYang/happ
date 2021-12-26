@@ -8,14 +8,20 @@
       ></i
     ></template>
     <div class="card-body" v-show="!state.isFold">
-      <hfield v-for="(f,fi) in da.fields" :key="fi" :da="f" />
+      <hfield
+        v-for="(f, fi) in da.fields"
+        :key="fi"
+        :da="f"
+        @fieldChange="fieldChange" 
+        @fieldKeyup="fieldKeyup"
+      />
     </div>
   </a-card>
 </template>
 
 <script>
-import { ref,computed, reactive,  } from "@vue/reactivity";
-import hfield from '../hfield'
+import { ref, computed, reactive } from "@vue/reactivity";
+import hfield from "../hfield";
 export default {
   props: {
     da: {
@@ -29,12 +35,12 @@ export default {
       },
     },
   },
-  components:{
-    hfield
+  components: {
+    hfield,
   },
-  setup(props) {
+  setup(props, ctx) {
     // console.log(props.da);
-    props.da.fields.sort((a,b)=>a.seq-b.seq)
+    props.da.fields.sort((a, b) => a.seq - b.seq);
     const state = reactive({
       isFold: false,
       foldIco: computed(() => {
@@ -47,15 +53,22 @@ export default {
     const toggole = () => {
       state.isFold = !state.isFold;
     };
-
+    const fieldChange = (e) => {
+      // console.log(e)
+      ctx.emit("fieldChange", e);
+    };
+    const fieldKeyup=(e)=>{
+            ctx.emit('fieldKeyup',e);
+        }
     return {
       state,
       toggole,
+      fieldChange,
+      fieldKeyup,
     };
   },
 };
 </script>
 
 <style lang="scss">
-
 </style>
