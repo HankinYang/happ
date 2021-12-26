@@ -7,7 +7,7 @@
       />
     </a-layout-header>
     <a-layout-content style="text-align: left">
-      <hFieldGroup v-for="(fg,fgi) in fieldGroups" :key="fgi" :da="fg" />
+      <hFieldGroup v-for="(fg,fgi) in fieldGroups.list" :key="fgi" :da="fg" />
     </a-layout-content>
   </a-layout>
 </template>
@@ -31,7 +31,7 @@ export default {
     },
   },
   setup(props) {
-    console.log(props.params);
+    console.log('detial',props.params);
     const operator = reactive({
       menus: [],
       menuClick() {},

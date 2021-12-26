@@ -80,11 +80,12 @@ export default {
       tabs: [{ id: 0, title: "tab1", ico: "icon-h-all", closable: false }],
       activeKey: "",
       addTab: (tabInfo) => {
-        console.log("tab add ->", tabInfo,tabDic[tabInfo.id]);
+        // console.log("tab add ->", tabInfo,tabDic[tabInfo.id]);
         if (!tabDic[tabInfo.id]) {
           tab.closable = true;
-          tabInfo.params.id=tabInfo.id;
-          tabInfo.params.name=tabInfo.name;
+          tabInfo.params=tabInfo.params
+          // tabInfo.params.id=tabInfo.id;
+          // tabInfo.params.name=tabInfo.name;
           tabInfo.params.title=tabInfo.title;
           tab.tabs.push(tabInfo);
           tabDic[tabInfo.id] = tabInfo;

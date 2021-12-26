@@ -1,14 +1,21 @@
 <template>
-  <a-card :title="da.title" style="" :bodyStyle="bodyStyle">
-    <template #extra><i :class="['iconfont',foldIco]" style="cursor:pointer;" @click="isFold=!isFold"></i></template>
-    <div class="card-body" v-show="!isFold">
-      hello
+  <a-card :title="da.title" style="" :bodyStyle="state.bodyStyle">
+    <template #extra
+      ><i
+        :class="['iconfont', state.foldIco]"
+        style="cursor: pointer"
+        @click="toggole"
+      ></i
+    ></template>
+    <div class="card-body" v-show="!state.isFold">
+      <hfield v-for="(f,fi) in da.fields" :key="fi" :da="f" />
     </div>
   </a-card>
 </template>
 
 <script>
-import { computed, reactive } from "@vue/reactivity";
+import { ref,computed, reactive,  } from "@vue/reactivity";
+import hfield from '../hfield'
 export default {
   props: {
     da: {
@@ -17,28 +24,38 @@ export default {
         return {
           id: "",
           title: "",
+          fields: [],
         };
       },
     },
   },
+  components:{
+    hfield
+  },
   setup(props) {
-    console.log(props);
-
-    let isFold = false;
-    const bodyStyle = computed(() => {
-      return isFold ? {} : { padding: 0 };
+    // console.log(props.da);
+    props.da.fields.sort((a,b)=>a.seq-b.seq)
+    const state = reactive({
+      isFold: false,
+      foldIco: computed(() => {
+        return state.isFold ? "icon-h-arrow-up" : "icon-h-arrow-down";
+      }),
+      bodyStyle: computed(() => {
+        return !state.isFold ? { padding: "10px" } : { padding: 0 };
+      }),
     });
-    const foldIco=computed(()=>{
-      return isFold?'icon-h-arrow-up':'icon-h-arrow-down'
-    })
+    const toggole = () => {
+      state.isFold = !state.isFold;
+    };
+
     return {
-      isFold,
-      bodyStyle,
-      foldIco
+      state,
+      toggole,
     };
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+
 </style>

@@ -97,8 +97,8 @@ export default {
     getLanguages().then(r=>{
       head.languages=r.data;
     })
+  
     getHeaderNav().then((r) => {
-    //   console.log(r);
       head.nav = r.data;
       if(head.nav.length){
           store.commit('setCurrentKey',head.nav[0].key);

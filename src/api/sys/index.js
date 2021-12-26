@@ -9,7 +9,7 @@ export function Result(data) {
                 errMsg: 'success',
                 data: data
             });
-        }, 300)
+        }, 100)
 
     })
 }
@@ -86,30 +86,30 @@ export function getNavMenu(params) {
         ],
         2: [
             {
-                id: 1, key: 1, 'title': '系统设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-set1",
+                id: 1, key: 1, 'title': '系统设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-set1",seq:'1',
                 children: [
-                    { id: 14, key: 14, 'title': '多语言', categroy: 'page', 'page': 'happ/list',params:{id:'1',name:'language'}, ico: "icon-h-all", },
-                    { id: 13, key: 13, 'title': '数据字典', categroy: 'page', 'page': 'happ/list',params:{id:'2',name:'dataDict'}, ico: "icon-h-template-fill", },
-                    { id: 12, key: 12, 'title': '系统参数', categroy: 'page', 'page': 'happ/list',params:{id:'3',name:'sysParams'}, ico: "icon-h-conditions", },
-                    { id: 11, key: 11, 'title': '系统菜单', categroy: 'page', 'page': 'happ/list',params:{id:'4',name:'sysMenu'}, ico: "icon-h-writing", },
+                    { id: 14, key: 14, 'title': '多语言', categroy: 'page', 'page': 'happ/list',params:{id:'1',name:'language'}, ico: "icon-h-all",seq:'11', },
+                    { id: 13, key: 13, 'title': '数据字典', categroy: 'page', 'page': 'happ/list',params:{id:'2',name:'dataDict'}, ico: "icon-h-template-fill", seq:'13',},
+                    { id: 12, key: 12, 'title': '系统参数', categroy: 'page', 'page': 'happ/list',params:{id:'3',name:'sysParams'}, ico: "icon-h-conditions", seq:'12',},
+                    { id: 11, key: 11, 'title': '系统菜单', categroy: 'page', 'page': 'happ/list',params:{id:'4',name:'sysMenu'}, ico: "icon-h-writing", seq:'14',},
                 ]
             },
             {
-                id: 2, key: 2, 'title': '应用管理', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all",
+                id: 2, key: 2, 'title': '应用管理', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all",seq:'1',
                 children: [
-                    { id: 22, key: 22, 'title': '应用列表', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
-                    { id: 23, key: 23, 'title': '字段类型', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
-                    { id: 24, key: 24, 'title': '用户设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
+                    { id: 22, key: 22, 'title': '应用列表', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all",seq:'1', },
+                    { id: 23, key: 23, 'title': '字段类型', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", seq:'1',},
+                    { id: 24, key: 24, 'title': '用户设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", seq:'1',},
                 ]
             },
         ],
         3: [
             {
-                id: 1, key: 1, 'title': '系统设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all",
+                id: 1, key: 1, 'title': '系统设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all",seq:'1',
                 children: [
-                    { id: 2, key: 2, 'title': '系统参数', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
-                    { id: 3, key: 3, 'title': '数据字典', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
-                    { id: 4, key: 4, 'title': '用户设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", },
+                    { id: 2, key: 2, 'title': '系统参数', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", seq:'1',},
+                    { id: 3, key: 3, 'title': '数据字典', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", seq:'1',},
+                    { id: 4, key: 4, 'title': '用户设置', 'url': 'http://192.168.1.100:9999', ico: "icon-h-all", seq:'1',},
                 ]
             },
         ],

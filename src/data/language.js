@@ -6,28 +6,46 @@ export default {
             id: 0, title: '基本资料',
             fields:[
                 {
-                    title: "Id",
+                    id:'id',
+                    label: "Id",
                     dataIndex: "id",
                     defaultSortOrder: "descend",
-                    resizable: true,
-                    width: 80,
-                    sorter: (a, b) => a.id - b.id,
+                    width: 240,
+                    seq:'0',
+                    dataInfo:{
+                        category:'int'
+                    },
+                    showInfo:{
+                        category:'number'
+                    }
                 },
                 {
-                    title: "名称",
+                    id:'name',
+                    label: "名称",
                     dataIndex: "name",
                     defaultSortOrder: "descend",
-                    resizable: true,
-                    width: 180,
-                    sorter: (a, b) => a.name - b.name,
+                    width: 240,
+                    seq:'0',
+                    dataInfo:{
+                        category:'string'
+                    },
+                    showInfo:{
+                        category:'text'
+                    }
                 },
                 {
-                    title: "标题",
+                    id:'label',
+                    label: "标题",
                     dataIndex: "title",
                     defaultSortOrder: "descend",
-                    resizable: true,
-                    width: 180,
-                    sorter: (a, b) => a.title - b.title,
+                    width: 240,
+                    seq:'0',
+                    dataInfo:{
+                        category:'string'
+                    },
+                    showInfo:{
+                        category:'text'
+                    }
                 },
                 
             ]
@@ -36,36 +54,64 @@ export default {
             id:1,title:'系统',
             fields:[
                 {
-                    title: "modifiTime",
-                    dataIndex: "title",
+                    id:'modifiTime',
+                    label: "修改时间",
+                    dataIndex: "modifiTime",
                     defaultSortOrder: "descend",
-                    resizable: true,
                     width: 180,
-                    sorter: (a, b) => a.title - b.title,
+                    seq:'2',
+                    dataInfo:{
+                        category:'datetime'
+                    },
+                    showInfo:{
+                        category:'text',
+                        disabled:true
+                    }
                 },
                 {
-                    title: "修改人",
+                    id:'modifier',
+                    label: "修改人",
                     dataIndex: "modifier",
                     defaultSortOrder: "descend",
-                    resizable: true,
                     width: 180,
-                    sorter: (a, b) => a.title - b.title,
+                    seq:'1',
+                    dataInfo:{
+                        category:'string'
+                    },
+                    showInfo:{
+                        category:'text',
+                        disabled:true
+                    }
                 },
                 {
-                    title: "创建时间",
+                    id:'createTime',
+                    label: "创建时间",
                     dataIndex: "createTime",
                     defaultSortOrder: "descend",
-                    resizable: true,
                     width: 180,
-                    sorter: (a, b) => a.title - b.title,
+                    seq:'4',
+                    dataInfo:{
+                        category:'datetime',
+                    },
+                    showInfo:{
+                        category:'text',
+                        disabled:true
+                    }
                 },
                 {
-                    title: "创建人",
+                    id:'creator',
+                    label: "创建人",
                     dataIndex: "creator",
                     defaultSortOrder: "descend",
-                    resizable: true,
                     width: 180,
-                    sorter: (a, b) => a.title - b.title,
+                    seq:'3',
+                    dataInfo:{
+                        category:'string',
+                    },
+                    showInfo:{
+                        category:'text',
+                        disabled:true
+                    }
                 },
             ]
         }
