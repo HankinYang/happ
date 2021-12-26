@@ -6,17 +6,20 @@ export default {
     },
     app: {
         operators:[
-            { id: 6, key: 6, 'title': '新增',  ico: "icon-h-add-select",  action:{
+            { id: 6, key: 6,name:'add', 'title': '新增',  ico: "icon-h-add-select",  action:{
                 name:'add', category:'openTab','url': '/action/add','title': '新增',
             } },
-            { id: 6, key: 6, 'title': '复制',  ico: "icon-h-add-select",  action:{
+            { id: 8, key: 8,name:'copy', 'title': '复制',  ico: "icon-h-add-select",  action:{
                 name:'copy', category:'openTab','url': '/action/copy','title': '复制',
             } },
-            { id: 7, key: 7, 'title': '保存',  ico: "icon-h-editor",  action:{
-                name:'save', category:'openTab','url': '/action/edit','title': '保存',
+            { id: 9, key: 9,name:'edit', 'title': '编辑',  ico: "icon-h-add-select",  action:{
+                name:'edit', category:'openTab','url': '/action/add','title': '编辑',
+            } },
+            { id: 7, key: 7,name:'save', 'title': '保存',  ico: "icon-h-editor",  action:{
+                name:'save', category:'postApi','url': '/action/edit','title': '保存',
             } },
             {
-                id: 2, key: 2, 'title': '提交', 'url': '/action/', ico: "icon-h-seleted",
+                id: 2, key: 2,name:'edit', 'title': '提交', 'url': '/action/', ico: "icon-h-seleted",
                 children: [
                     { id: 22, key: 22, 'title': '提交',  ico: "icon-h-seleted", 
                     action:{
@@ -59,6 +62,7 @@ export default {
                 fields: [
                     {
                         id: 'id',
+                        name:'id',
                         label: "Id",
                         dataIndex: "id",
                         defaultSortOrder: "descend",
@@ -73,6 +77,7 @@ export default {
                     },
                     {
                         id: 'name',
+                        name:'name',
                         label: "名称",
                         dataIndex: "name",
                         defaultSortOrder: "descend",
@@ -87,6 +92,7 @@ export default {
                     },
                     {
                         id: 'label',
+                        name:'label',
                         label: "标题",
                         dataIndex: "title",
                         defaultSortOrder: "descend",
@@ -107,6 +113,7 @@ export default {
                 fields: [
                     {
                         id: 'modifiTime',
+                        name:'modifiTime',
                         label: "修改时间",
                         dataIndex: "modifiTime",
                         defaultSortOrder: "descend",
@@ -122,6 +129,7 @@ export default {
                     },
                     {
                         id: 'modifier',
+                        name:'modifier',
                         label: "修改人",
                         dataIndex: "modifier",
                         defaultSortOrder: "descend",
@@ -137,6 +145,7 @@ export default {
                     },
                     {
                         id: 'createTime',
+                        name:'createTime',
                         label: "创建时间",
                         dataIndex: "createTime",
                         defaultSortOrder: "descend",
@@ -152,6 +161,7 @@ export default {
                     },
                     {
                         id: 'creator',
+                        name:'creator',
                         label: "创建人",
                         dataIndex: "creator",
                         defaultSortOrder: "descend",
@@ -170,3 +180,4 @@ export default {
         ]
     },
 }
+
