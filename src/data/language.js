@@ -54,7 +54,7 @@ export default {
             },
             { id: 23, key: 23, 'title': '删除',  ico: "icon-h-ashbin",  action:{
                 name:'delete', category:'postApi','url': '/action/delete','title': '删除',
-            } },
+            } }, 
         ],
         fieldGroups: [
             {
